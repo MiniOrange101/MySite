@@ -7,39 +7,27 @@
     <title>联系我们</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        table {
-            border-radius: 12px;
-            background-color: #393434;
-            padding: 5px;
-            margin: auto;
-
-        }
-
-        td {
-            color: #fffaf4;
-            font-size: 2em;
-            padding: 2px;
-            text-align: center;
-            font-family: Helvetica;
-        }
-
-        td a {
-            display: block;
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 6px;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        td a:hover {
-            background-color: #6f6868;
-        }
-    </style>
+    <script src="script.js"></script>
 </head>
 
-<body style="background-color: #393434;">
+<body style="background-color: #343434;">
+    <h1>联系我们</h1>
+    <div id="FeedbackForm">
+        <!--<form action="javascript:alert('感谢您提供反馈！您的支持就是我们最大的动力！')" method="post" name="feedback">-->
+        <form action="feedback.php" method="post"></form>
+        <table style="width: 60%;">
+            <tr>
+                <td><label>反馈/建议 :</label></td>
+            </tr>
+            <tr>
+                <td><textarea name="FeedbackText" rows="10" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="提交反馈"></td>
+            </tr>
+        </table>
+        </form>
+    </div>
     <table border="0">
         <tr>
             <td>邮箱地址</td>
