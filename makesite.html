@@ -7,28 +7,46 @@
     <title>在线建站</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/foundation/5.5.3/css/foundation.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/foundation.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
     <script src='script.js'></script>
 </head>
 
-<body style="background-color: #343434;">
-    <table>
-        <tr>
-            <td>
-                <textarea name="srccode" id="srctxt" rows="20"
-                    style="font-family: Menlo, Monaco, 'Courier New', monospace;width: auto;"></textarea>
-            </td>
-            <td>
-                <div id="diver"></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button
-                    onclick="DebugHtmlCode(document.getElementById('srctxt').value,document.getElementById('diver'))"
-                    class="app">Debug</button>
-            </td>
-        </tr>
-    </table>
+<body>
+    <div class="responsive" style="overflow-x: hidden;">
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Sex</th>
+                    <th>Age</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MiniOrange</td>
+                    <td>Male</td>
+                    <td>12</td>
+                    <td>MiniOrange@foxmail.com</td>
+                </tr>
+                <tr>
+                    <td>Ryan</td>
+                    <td>Male</td>
+                    <td>13</td>
+                    <td>3029938893@qq.com</td>
+                </tr>
+                <tr>
+                    <td>Sam</td>
+                    <td>Male</td>
+                    <td>12</td>
+                    <td>SamWang49@outlook.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

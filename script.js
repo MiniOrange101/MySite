@@ -1,3 +1,6 @@
+$(document).ready(function () {
+    $(document).foundation();
+})
 function MenuClicked(id) {
     var eleas = document.getElementsByTagName('a');
     for (var i = 0; i < eleas.length; i++) {
