@@ -5,3 +5,7 @@ function MenuClicked(id) {
     }
     document.getElementById(id).setAttribute('class', 'active');
 }
+
+function DebugHtmlCode(srccode, targetdiv) {
+    targetdiv.innerHTML = srccode;
+}
