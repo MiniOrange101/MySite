@@ -7,6 +7,19 @@
   <title>在线建站</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src='script.js'></script>
+  <style>
+    textarea {
+      background-color: #f8f8f8;
+      border-color: #dfdfdf;
+      border-style: solid;
+      border-width: 1px;
+      color: #333;
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
+      font-weight: normal;
+      padding: 0.125rem 0.3125rem 0.0625rem;
+      resize: none
+    }
+  </style>
 </head>
 
 <body>
@@ -30,53 +43,55 @@
     </section>
   </nav>
   <!--结束标题栏/导航栏-->
-  <div class="off-canvas-wrap" data-offcanvas>
-    <!--顶部工具栏-->
-    <nav class="top-bar" data-topbar>
-      <section class="top-bar-section">
-        <!--左侧工具-->
-        <ul class="left">
-          <li data-tooltip class="radius" title="插入文本">
-            <a href="#"><i class="fi-pencil"></i></a>
-          </li>
-          <li data-tooltip class="radius" title="插入图片">
-            <a href="#"><i class="fi-photo"></i></a>
-          </li>
-          <li data-tooltip class="radius" title="插入表格">
-            <a href="#"><i class="fi-thumbnails"></i></a>
-          </li>
-          <li data-tooltip class="radius" title="插入列表">
-            <a href="#"><i class="fi-list-thumbnails"></i></a>
-          </li>
-          <li data-tooltip class="radius" title="插入表单">
-            <a href="#"><i class="fi-results"></i></a>
-          </li>
-          <li data-tooltip class="radius" title="插入框架">
-            <a href="#">[ <i class="fi-page-filled"></i> ]</a>
-          </li>
-          <li data-tooltip class="radius" title="插入JS代码">
-            <a href="#">&lt;/&gt;</a>
-          </li>
-        </ul>
-        <!--右侧工具-->
-        <ul class="right">
-          <li data-tooltip class="radius" title="保存文档">
-            <a href="#"><i class="fi-save"></i></a>
-          </li>
-          <li><a href="#"><i class="fi-align-justify"></i></a></li>
-        </ul>
-      </section>
-    </nav>
-    <!--结束工具栏-->
-    <div class="row">
-      <div class="small-6 columns">
-
-      </div>
-      <div class="small-6 columns">
-      </div>
+  <!--顶部工具栏-->
+  <nav class="top-bar" data-topbar>
+    <section class="top-bar-section">
+      <!--左侧工具-->
+      <ul class="left">
+        <li data-tooltip class="radius" title="插入文本">
+          <a href="#"><i class="fi-pencil"></i></a>
+        </li>
+        <li data-tooltip class="radius" title="插入图片">
+          <a href="#"><i class="fi-photo"></i></a>
+        </li>
+        <li data-tooltip class="radius" title="插入表格">
+          <a href="#"><i class="fi-thumbnails"></i></a>
+        </li>
+        <li data-tooltip class="radius" title="插入列表">
+          <a href="#"><i class="fi-list-thumbnails"></i></a>
+        </li>
+        <li data-tooltip class="radius" title="插入表单">
+          <a href="#"><i class="fi-results"></i></a>
+        </li>
+        <li data-tooltip class="radius" title="插入框架">
+          <a href="#">[ <i class="fi-page-filled"></i> ]</a>
+        </li>
+        <li data-tooltip class="radius" title="插入JS代码">
+          <a href="#">&lt;/&gt;</a>
+        </li>
+      </ul>
+      <!--右侧工具-->
+      <ul class="right">
+        <li data-tooltip class="radius" title="保存文档">
+          <a href="#"><i class="fi-save"></i></a>
+        </li>
+        <li><a href="#"><i class="fi-align-justify"></i></a></li>
+      </ul>
+    </section>
+  </nav>
+  <!--结束工具栏-->
+  <!--编辑区-->
+  <div class="row" style="background-color: #999;">
+    <!--代码-->
+    <div class="small-12 columns">
+      <textarea name="Code-html" id="codehtml" style="height: 600px;width: 100%;"></textarea>
     </div>
+    <!--预览
+    <div class="small-6 columns" style="border-width: 1px;border-style: solid;height: 600px">
+    </div>-->
   </div>
-
+  <!--结束编辑区-->
+  <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
 </body>
 
