@@ -2,51 +2,82 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>在线建站</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/foundation/5.5.3/css/foundation.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/foundation.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
-    <script src='script.js'></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>在线建站</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='script.js'></script>
 </head>
 
 <body>
-    <div class="responsive" style="overflow-x: hidden;">
-        <table>
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Sex</th>
-                    <th>Age</th>
-                    <th>E-mail</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>MiniOrange</td>
-                    <td>Male</td>
-                    <td>12</td>
-                    <td>MiniOrange@foxmail.com</td>
-                </tr>
-                <tr>
-                    <td>Ryan</td>
-                    <td>Male</td>
-                    <td>13</td>
-                    <td>3029938893@qq.com</td>
-                </tr>
-                <tr>
-                    <td>Sam</td>
-                    <td>Male</td>
-                    <td>12</td>
-                    <td>SamWang49@outlook.com</td>
-                </tr>
-            </tbody>
-        </table>
+  <!--标题栏-->
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="index.html"><i class="fi-web"></i> Lazyco.top</a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <!--导航栏按钮-->
+    <section class="top-bar-section">
+      <ul class="left">
+        <li><a href="index.html"><i class="fi-home"></i> 主页</a></li>
+        <li><a href="contact.html"><i class="fi-mail"></i> 联系</a></li>
+        <li><a href="downloads.html"><i class="fi-mail"></i> 下载</a></li>
+        <li class="active"><a href="makesite.html"><i class="fi-page"></i> 在线建站</a></li>
+      </ul>
+    </section>
+  </nav>
+  <!--结束标题栏/导航栏-->
+  <div class="off-canvas-wrap" data-offcanvas>
+    <!--顶部工具栏-->
+    <nav class="top-bar" data-topbar>
+      <section class="top-bar-section">
+        <!--左侧工具-->
+        <ul class="left">
+          <li data-tooltip class="radius" title="插入文本">
+            <a href="#"><i class="fi-pencil"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入图片">
+            <a href="#"><i class="fi-photo"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入表格">
+            <a href="#"><i class="fi-thumbnails"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入列表">
+            <a href="#"><i class="fi-list-thumbnails"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入表单">
+            <a href="#"><i class="fi-results"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入框架">
+            <a href="#">[ <i class="fi-page-filled"></i> ]</a>
+          </li>
+          <li data-tooltip class="radius" title="插入JS代码">
+            <a href="#">&lt;/&gt;</a>
+          </li>
+        </ul>
+        <!--右侧工具-->
+        <ul class="right">
+          <li data-tooltip class="radius" title="保存文档">
+            <a href="#"><i class="fi-save"></i></a>
+          </li>
+          <li><a href="#"><i class="fi-align-justify"></i></a></li>
+        </ul>
+      </section>
+    </nav>
+    <!--结束工具栏-->
+    <div class="row">
+      <div class="small-6 columns">
+
+      </div>
+      <div class="small-6 columns">
+      </div>
     </div>
+  </div>
+
+  <script>$(document).ready(function () { $(document).foundation() })</script>
 </body>
 
 </html>
