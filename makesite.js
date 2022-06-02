@@ -1,3 +1,4 @@
+var Elements = new Object();
 function ElemObj(tag, attribute, text) {
     this.tag = tag;
     this.attribute = attribute;
@@ -10,6 +11,7 @@ function ElemObj(tag, attribute, text) {
     ele.appendChild(document.createTextNode(text));
     this.element = ele;
 }
+
 function init() {
 
 }
