@@ -8,6 +8,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src='script.js'></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="makesite.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
           <h1><a href="index.html"><i class="fi-web"></i> Lazyco.top</a>
           </h1>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="javascript:void(0);"><span>Menu</span></a></li>
       </ul>
       <!--导航栏按钮-->
       <section class="top-bar-section">
@@ -33,48 +34,66 @@
     </nav>
     <!--结束标题栏/导航栏-->
     <!--顶部工具栏-->
-    <nav class="top-bar" data-topbar>
+    <nav id="tools" class="top-bar" data-topbar>
       <section class="top-bar-section">
         <!--左侧工具-->
         <ul class="left">
           <li data-tooltip class="radius" title="插入文本">
-            <a href="#"><i class="fi-pencil"></i></a>
+            <a data-reveal-id="askforpinfo">
+              <i class="fi-pencil"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入图片">
-            <a href="#"><i class="fi-photo"></i></a>
+            <a><i class="fi-photo"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入表格">
-            <a href="#"><i class="fa fa-table"></i></a>
+            <a><i class="fa fa-table"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入列表">
-            <a href="#"><i class="fi-list-thumbnails"></i></a>
+            <a><i class="fi-list-thumbnails"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入表单">
-            <a href="#"><i class="fi-results"></i></a>
+            <a><i class="fi-results"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入框架">
-            <a href="#"><i class="fa fa-window-maximize"></i></a>
+            <a><i class="fa fa-window-maximize"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入JS代码">
-            <a href="#"><i class="fa fa-code"></i></a>
+            <a><i class="fa fa-code"></i></a>
           </li>
         </ul>
         <!--右侧工具-->
         <ul class="right">
           <li data-tooltip class="radius" title="保存文档">
-            <a href="#"><i class="fi-save"></i></a>
+            <a href="javascript:void(0);"><i class="fi-save"></i></a>
           </li>
-          <li><a href="#"><i class="fi-align-justify"></i></a></li>
+          <li><a href="javascript:void(0);"><i class="fi-align-justify"></i></a></li>
         </ul>
       </section>
     </nav>
     <!--结束工具栏-->
     <!--编辑区-->
     <!--预览-->
-    <div class="small-12 columns" style="border-width: 1px;border-style: solid;height: 600px">
+    <div id="container" class="small-12 columns" style="border-width: 1px;border-style: solid;height: 600px">
     </div>
   </div>
   <!--结束编辑区-->
+  <div id="askforpinfo" class="reveal-modal" data-reveal>
+    <h1>设置文本框</h1>
+    <label>
+      ID: <input type="text" name="pid" id="Pid">
+      <small id="piderr" class="error" style="display: none;">请输入ID</small>
+    </label>
+    内容: <input type="text" name="pcontent" id="Pcontent">
+    <button type="button" class="button radius"
+      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
+    </button>
+    <a class="close-reveal-modal">&times;</a>
+  </div>
+  <!--模态框-->
+  <div data-alert class="alert-box success radius" style="display: none;" id="success">
+    <strong>成功</strong>成功添加元素
+    <a href="#" class="close">&times;</a>
+  </div>
   <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
 </body>

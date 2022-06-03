@@ -8,11 +8,3 @@ document.write("<link rel=\"stylesheet\" href=\"https:\/\/cdn.staticfile.org\/fo
 //foundation
 document.write("<link rel=\"stylesheet\" href=\"http:\/\/static.runoob.com\/assets\/foundation-icons\/foundation-icons.css\">");
 //图标
-
-function DebugHtmlCode(srccode, targetdiv) {
-    targetdiv.innerHTML = srccode;
-}//For makesite.html
-
-function AddElem(TagName, ElemID) {
-    document.getElementById(ElemID)
-}
