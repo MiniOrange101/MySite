@@ -11,8 +11,8 @@
   <script src="makesite.js"></script>
 </head>
 
-<body>
-  <div class="row">
+<body style="height: 100%;">
+  <div style="display: flex;flex-flow: column;height: 100%;">
     <!--标题栏-->
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
@@ -72,11 +72,28 @@
     </nav>
     <!--结束工具栏-->
     <!--编辑区-->
-    <!--预览-->
-    <div id="container" class="small-12 columns" style="border-width: 1px;border-style: solid;height: 600px">
+    <div class="row" style="overflow-y: hidden;flex: 1 1 auto;">
+      <!--元素列表-->
+      <div id="elements" class="small-2 columns"
+        style="border-width: 1px;border-style: solid;height: 100%;background-color: #f1f1f1;overflow-y: auto;flex: 1 1 auto;">
+        <ul class="side-nav">
+          <li>
+            <h3>元素列表</h3>
+          </li>
+          <li><a href="#"><i class="fa fa-plus-circle"></i>添加元素</a></li>
+        </ul>
+      </div>
+      <!--预览-->
+      <div id="container" class="small-8 columns" style="border-width: 1px;border-style: solid;height: 100%;">
+      </div>
+      <!--属性列表-->
+      <div id="attributes" class="small-2 columns"
+        style="border-width: 1px;border-style: solid;height: 100%;flex: 1 1 auto;">
+      </div>
     </div>
   </div>
   <!--结束编辑区-->
+  <!--模态框-->
   <div id="askforpinfo" class="reveal-modal" data-reveal>
     <h1>设置文本框</h1>
     <label>
@@ -88,11 +105,6 @@
       onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
     </button>
     <a class="close-reveal-modal">&times;</a>
-  </div>
-  <!--模态框-->
-  <div data-alert class="alert-box success radius" style="display: none;" id="success">
-    <strong>成功</strong>成功添加元素
-    <a href="#" class="close">&times;</a>
   </div>
   <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
