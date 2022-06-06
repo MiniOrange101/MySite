@@ -9,8 +9,6 @@
   <script src='script.js'></script>
   <link rel="stylesheet" href="styles.css">
   <script src="makesite.js"></script>
-  <link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body style="height: 100%;">
@@ -103,24 +101,25 @@
   <!--P模态框-->
   <div id="askforpinfo" class="reveal-modal" data-reveal>
     <h1>设置文本框</h1>
-    <div class="input-group">
-      <span class="input-group-label">ID: </span>
-      <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field">
+    <div style="display: flex;">
+      <div class="input-group" style="flex:1 1 1;">
+        <span class="input-group-label">ID: </span>
+        <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field">
+      </div>
+      <small id="piderr" class="error" style="display: none;">请输入ID</small>
+      <div class="input-group">
+        <span class="input-group-label">内容: </span>
+        <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
+      </div>
+      <button type="button" class="button radius"
+        onclick="addElement(document.getElementById('pid').value,'p',document.getElementById('pcontent').value)">完成
+      </button>
     </div>
-    <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    <div class="input-group">
-      <span class="input-group-label">内容: </span>
-      <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
-    </div>
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
-    </button>
     <a class="close-reveal-modal">&times;</a>
   </div>
 
   <div id="askforimginfo" class="reveal-modal" data-reveal>
     <h1>设置图片</h1>
-
     <button type="button" class="button radius"
       onclick="addElement(document.getElementById('imgid').value,'img',document.getElementById('imgcontent').value)">完成
     </button>
@@ -194,10 +193,6 @@
 
   <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/vendor/what-input.js"></script>
-  <script src="js/vendor/foundation.js"></script>
-  <script src="js/app.js"></script>
 </body>
 
 </html>
