@@ -9,6 +9,8 @@
   <script src='script.js'></script>
   <link rel="stylesheet" href="styles.css">
   <script src="makesite.js"></script>
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body style="height: 100%;">
@@ -43,22 +45,22 @@
               <i class="fi-pencil"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入图片">
-            <a><i class="fi-photo"></i></a>
+            <a data-reveal-id="askforimginfo"><i class="fi-photo"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入表格">
-            <a><i class="fa fa-table"></i></a>
+            <a data-reveal-id="askfortableinfo"><i class="fa fa-table"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入列表">
-            <a><i class="fi-list-thumbnails"></i></a>
+            <a data-reveal-id="askforlistinfo"><i class="fi-list-thumbnails"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入表单">
-            <a><i class="fi-results"></i></a>
+            <a data-reveal-id="askforforminfo"><i class="fi-results"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入框架">
-            <a><i class="fa fa-window-maximize"></i></a>
+            <a data-reveal-id="askforiframeinfo"><i class="fa fa-window-maximize"></i></a>
           </li>
           <li data-tooltip class="radius" title="插入JS代码">
-            <a><i class="fa fa-code"></i></a>
+            <a data-reveal-id="askforscriptinfo"><i class="fa fa-code"></i></a>
           </li>
         </ul>
         <!--右侧工具-->
@@ -66,7 +68,6 @@
           <li data-tooltip class="radius" title="保存文档">
             <a href="javascript:void(0);"><i class="fi-save"></i></a>
           </li>
-          <li><a href="javascript:void(0);"><i class="fi-align-justify"></i></a></li>
         </ul>
       </section>
     </nav>
@@ -102,11 +103,15 @@
   <!--P模态框-->
   <div id="askforpinfo" class="reveal-modal" data-reveal>
     <h1>设置文本框</h1>
-    <label>
-      ID: <input type="text" id="pid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    内容: <input type="text" id="pcontent">
+    <div class="input-group">
+      <span class="input-group-label">ID: </span>
+      <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field">
+    </div>
+    <small id="piderr" class="error" style="display: none;">请输入ID</small>
+    <div class="input-group">
+      <span class="input-group-label">内容: </span>
+      <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
+    </div>
     <button type="button" class="button radius"
       onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
     </button>
@@ -115,13 +120,9 @@
 
   <div id="askforimginfo" class="reveal-modal" data-reveal>
     <h1>设置图片</h1>
-    <label>
-      ID: <input type="text" id="imgid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    源文件: <input type="text" id="imgsrc">
+
     <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('imgid').value,'img',document.getElementById('imgsrc').value)">完成
+      onclick="addElement(document.getElementById('imgid').value,'img',document.getElementById('imgcontent').value)">完成
     </button>
     <a class="close-reveal-modal">&times;</a>
   </div>
@@ -193,6 +194,10 @@
 
   <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/vendor/foundation.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

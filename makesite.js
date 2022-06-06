@@ -79,7 +79,15 @@ function addElement(id, tag, value) {
                 Elements[id] = new ElemObj(id, tag, {}, {}, value);
                 break;
             case "img":
-                Elements[id] = new ElemObj(id, tag, { src: value.src }, { width: value.width, height: value.height }, "");
+                if (value[0] == "") {
+                    value[0] = "auto";
+                }
+                if (value[1] == "") {
+                    value[1] = "auto";
+                }
+                if (value[0] != "" && value[1] != "") {
+                    Elements[id] = new ElemObj(id, tag, { src: value[2] }, { width: value[0] + "px", height: value[1] + "px" }, "");
+                }
                 break;
             case "table":
                 Elements[id] = new ElemObj(id, tag, {}, {}, "");
