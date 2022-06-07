@@ -69,9 +69,6 @@ function refresh() {
 }
 
 function addElement(id, tag, value) {
-    if (id == "") {
-        document.getElementById(tag + "iderr").style.display = "block";
-    }
     if (id != "") {
         document.getElementById(tag + "iderr").style.display = "none";
         switch (tag) {

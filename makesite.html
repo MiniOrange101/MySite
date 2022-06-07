@@ -27,7 +27,7 @@
         <ul class="left">
           <li><a href="index.html"><i class="fi-home"></i> 主页</a></li>
           <li><a href="contact.html"><i class="fi-mail"></i> 联系</a></li>
-          <li><a href="downloads.html"><i class="fi-mail"></i> 下载</a></li>
+          <li><a href="downloads.html"><i class="fi-download"></i> 下载</a></li>
           <li class="active"><a href="makesite.html"><i class="fi-page"></i> 在线建站</a></li>
         </ul>
       </section>
@@ -59,6 +59,9 @@
           </li>
           <li data-tooltip class="radius" title="插入JS代码">
             <a data-reveal-id="askforscriptinfo"><i class="fa fa-code"></i></a>
+          </li>
+          <li data-tooltip class="radius" title="插入区块">
+            <a data-reveal-id="askfordivinfo">div</a>
           </li>
         </ul>
         <!--右侧工具-->
@@ -100,22 +103,64 @@
   <!--结束编辑区-->
   <!--P模态框-->
   <div id="askforpinfo" class="reveal-modal" data-reveal>
-    <h1>设置文本框</h1>
-    <div style="display: flex;">
-      <div class="input-group" style="flex:1 1 1;">
-        <span class="input-group-label">ID: </span>
-        <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field">
+    <h2>设置文本框</h1>
+      <div class="row">
+        <form data-abide>
+          <div class="small-6 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">ID: </span>
+              </div>
+              <div class="small-9 columns">
+                <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field" required>
+              </div>
+              <small id="piderr" class="error" style="display: none;">请输入ID</small>
+            </div>
+
+          </div>
+          <div class="small-6 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">内容: </span>
+              </div>
+              <div class="small-9 columns">
+                <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-      <div class="input-group">
-        <span class="input-group-label">内容: </span>
-        <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
+      <div>
+        <h3>文本类型</h3>
+
       </div>
-      <button type="button" class="button radius"
-        onclick="addElement(document.getElementById('pid').value,'p',document.getElementById('pcontent').value)">完成
-      </button>
-    </div>
-    <a class="close-reveal-modal">&times;</a>
+      <div>
+        <h3>文本样式</h3>
+        <div class="row">
+          <div class="small-12 columns">
+            <ul id="pcsstabs" class="tabs" data-tab>
+              <li class="tab-title active"><a href="#pcustomize" aria-selected="true" tabindex="0">自定义样式</a></li>
+              <li class="tab-title"><a href="#pcssdiv" aria-selected="false" tabindex="-1">CSS代码</a></li>
+              <li class="tab-title"><a href="#pnone" aria-selected="false" tabindex="-1">不使用样式</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content">
+            <div class="content active" id="pcustomize">
+              <h1>开发中...请勿选择此项</h1>
+            </div>
+            <div id="pcssdiv" class="content">
+              <textarea id="pcss" cols="30" rows="15" class="code"></textarea>
+              <button type="button" class="button radius expand"
+                onclick="addElement(document.getElementById('pid').value,'p',[1,document.getElementById('pcontent').value,document.getElementById('pcss').value])">完成</button>
+            </div>
+            <div id="pnone" class="content"><button type="button" class="button radius expand"
+                onclick="addElement(document.getElementById('pid').value,'p',[2,document.getElementById('pcontent').value])">完成</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="close-reveal-modal">&times;</a>
   </div>
 
   <div id="askforimginfo" class="reveal-modal" data-reveal>
@@ -126,57 +171,6 @@
     <a class="close-reveal-modal">&times;</a>
   </div>
 
-  <div id="askfortableinfo" class="reveal-modal" data-reveal>
-    <h1>设置文本框</h1>
-    <label>
-      ID: <input type="text" id="Pid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    内容: <input type="text" id="Pcontent">
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
-  <div id="askforlistinfo" class="reveal-modal" data-reveal>
-    <h1>设置文本框</h1>
-    <label>
-      ID: <input type="text" id="Pid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    内容: <input type="text" id="Pcontent">
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
-  <div id="askforforminfo" class="reveal-modal" data-reveal>
-    <h1>设置文本框</h1>
-    <label>
-      ID: <input type="text" id="Pid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    内容: <input type="text" id="Pcontent">
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
-  <div id="askforiframeinfo" class="reveal-modal" data-reveal>
-    <h1>设置文本框</h1>
-    <label>
-      ID: <input type="text" id="Pid">
-      <small id="piderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    内容: <input type="text" id="Pcontent">
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'p',document.getElementById('Pcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
 
   <div id="askforscriptinfo" class="reveal-modal" data-reveal>
     <h1>设置JS代码</h1>
@@ -193,6 +187,7 @@
 
   <!--初始化JS-->
   <script>$(document).ready(function () { $(document).foundation() })</script>
+
 </body>
 
 </html>
