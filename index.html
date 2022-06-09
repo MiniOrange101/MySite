@@ -2,24 +2,38 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title id="titlebar">主页</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-    <script src='script.js'></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title id="titlebar">主页</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+  <script src='script.js'></script>
 </head>
 
-<body>
-    <ul>
-        <li><a id="home" class="active" href="javascript:MenuClicked('home');">主页</a></li>
-        <li><a id="contact" href="javascript:MenuClicked('contact');">联系</a></li>
-        <li><a id="about" href="javascript:MenuClicked('about');">关于</a></li>
-        <li><a id="downloads" href="javascript:MenuClicked('downloads');">下载</a></li>
-        <li><a id="covid" href="javascript:MenuClicked('covid');">疫情</a></li>
-        <li><a id="ppmc" href="javascript:MenuClicked('ppmc');">我的世界</a></li>
-        <li><a id="olhtml" href="javascript:MenuClicked('olhtml');">在线建站</a></li>
-    </ul>
+<body style="height: 100%;">
+  <div style="display: flex;flex-flow: column;height: 100%;">
+    <!--标题栏-->
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="./index.html"><i class="fi-web"></i> Lazyco.top</a>
+          </h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="javascript:void(0);"><span>Menu</span></a></li>
+      </ul>
+      <!--导航栏按钮-->
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="active"><a href="./index.html"><i class="fi-home"></i> 主页</a></li>
+          <li><a href="./contact.html"><i class="fi-mail"></i> 联系</a></li>
+          <li><a href="./downloads/index.html"><i class="fi-download"></i> 下载</a></li>
+          <li><a href="./makesite/index.html"><i class="fi-page"></i> 在线建站</a></li>
+          <li><a href="./check/index.html"><i class="fi-book"></i>在线作业工具</a></li>
+        </ul>
+      </section>
+    </nav>
+    <!--结束标题栏/导航栏-->
+  </div>
 </body>
 
 </html>

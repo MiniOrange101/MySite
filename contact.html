@@ -10,40 +10,31 @@
   <script src="script.js"></script>
 </head>
 
-<body style="background-color: #343434;">
-  <h1>联系我们</h1>
-  <div id="FeedbackForm">
-    <!--<form action="javascript:alert('感谢您提供反馈！您的支持就是我们最大的动力！')" method="post" name="feedback">-->
-    <form action="feedback.php" method="post"></form>
-    <table style="width: 60%;">
-      <tr>
-        <td><label>反馈/建议 :</label></td>
-      </tr>
-      <tr>
-        <td><textarea name="FeedbackText" rows="10" cols="50"></textarea></td>
-      </tr>
-      <tr>
-        <td><input type="submit" value="提交反馈"></td>
-      </tr>
-    </table>
-    </form>
+<body style="height: 100%;">
+  <div style="display: flex;flex-flow: column;height: 100%;">
+    <!--标题栏-->
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="./index.html"><i class="fi-web"></i> Lazyco.top</a>
+          </h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="javascript:void(0);"><span>Menu</span></a></li>
+      </ul>
+      <!--导航栏按钮-->
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="./index.html"><i class="fi-home"></i> 主页</a></li>
+          <li class="active"><a href="./contact.html"><i class="fi-mail"></i> 联系</a></li>
+          <li><a href="./downloads/index.html"><i class="fi-download"></i> 下载</a></li>
+          <li><a href="./makesite/index.html"><i class="fi-page"></i> 在线建站</a></li>
+          <li><a href="./check/index.html"><i class="fi-book"></i>在线作业工具</a></li>
+        </ul>
+      </section>
+    </nav>
+    <!--结束标题栏/导航栏-->
+
   </div>
-  <table border="0">
-    <tr>
-      <td>邮箱地址</td>
-      <td> : </td>
-      <td>
-        <a href="mailto:MiniOrange@foxmail.com">MiniOrange@foxmail.com</a>
-      </td>
-    </tr>
-    <tr>
-      <td>GitHub项目地址</td>
-      <td> : </td>
-      <td>
-        <a href="https://github.com/MiniOrange101/MySite/">MySite</a>
-      </td>
-    </tr>
-  </table>
 </body>
 
 </html>
