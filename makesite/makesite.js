@@ -2,6 +2,11 @@ var Elements = new Object();//定义元素对象容器
 var i = 0;
 var j = 0;
 var k = 0;
+
+function elementSelected(litem_a) {
+    document.getElementById('ElementDropdown').innerHTML = litem_a.innerHTML;
+    document.getElementById('elementTag').value = litem_a.dataset.eletag;
+}
 class ElemObj {
     constructor(id, tag, attribute, style, value) {
         this.tag = tag;
