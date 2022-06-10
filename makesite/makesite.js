@@ -7,6 +7,20 @@ function elementSelected(litem_a) {
     document.getElementById('ElementDropdown').innerHTML = litem_a.innerHTML;
     document.getElementById('elementTag').value = litem_a.dataset.eletag;
 }
+
+function generateElementsList(wiz) {
+    var TagToData = {};
+    var DataToTag = {};
+    var ELEOBJS = $("ul#ElementList li a").toArray();
+    for (i in ELEOBJS) {
+        TagToData[ELEOBJS[i].dataset.eletag] = ELEOBJS[i].innerHTML;
+
+    }
+    for (i in ELEOBJS) {
+        DataToTag[ELEOBJS[i].innerHTML] = ELEOBJS[i].dataset.eletag;
+    }
+    return [TagToData, DataToTag][wiz];
+}
 class ElemObj {
     constructor(id, tag, attribute, style, value) {
         this.tag = tag;

@@ -373,10 +373,12 @@
       <div class="small-4 columns">
         <div class="row collapse postfix-round">
           <div class="small-10 columns">
-            <input id="elementSearch" type="text" placeholder="搜索元素名称" class="input-group-field">
+            <input id="elementSearch" type="text" placeholder="搜索元素名称/标签" class="input-group-field">
           </div>
           <div class="small-2 columns">
-            <button class="button secondary postfix"><i class="fa fa-search"></i></button>
+            <button class="button secondary postfix"
+              onclick="searchElement(document.getElementById('elementSearch').value)"><i
+                class="fa fa-search"></i></button>
           </div>
         </div>
       </div>
