@@ -4,7 +4,7 @@ var j = 0;
 var k = 0;
 
 function elementSelected(litem_a) {
-    document.getElementById('ElementDropdown').innerHTML = litem_a.innerHTML;
+    document.getElementById('ElementDropdown').innerHTML = generateElementsList(0)[litem_a.dataset.eletag];
     document.getElementById('elementTag').value = litem_a.dataset.eletag;
 }
 
@@ -14,12 +14,37 @@ function generateElementsList(wiz) {
     var ELEOBJS = $("ul#ElementList li a").toArray();
     for (i in ELEOBJS) {
         TagToData[ELEOBJS[i].dataset.eletag] = ELEOBJS[i].innerHTML;
-
     }
     for (i in ELEOBJS) {
         DataToTag[ELEOBJS[i].innerHTML] = ELEOBJS[i].dataset.eletag;
     }
     return [TagToData, DataToTag][wiz];
+}
+
+function searchElement(string) {
+    document.getElementById("ElementSearchList").innerHTML = "";
+    var Regstr = new RegExp("\\" + string, "i");
+    var shownElems = [];
+    j = 0;
+    var elelist = generateElementsList(0);
+    for (i in elelist) {
+        if (Regstr.test(i) || Regstr.test(elelist[i])) {
+            var e_0 = document.createElement("li");
+            var e_1 = document.createElement("a");
+            e_1.setAttribute("onclick", "elementSelected(this)");
+            e_1.setAttribute("data-eletag", i);
+            e_1.appendChild(document.createTextNode(elelist[i]));
+            var e_2 = document.createElement("small");
+            e_2.appendChild(document.createTextNode(i));
+            e_1.appendChild(e_2);
+            e_0.appendChild(e_1);
+            shownElems[j] = e_0;
+            j++;
+        }
+    }
+    for (i in shownElems) {
+        document.getElementById("ElementSearchList").appendChild(shownElems[i]);
+    }
 }
 class ElemObj {
     constructor(id, tag, attribute, style, value) {
