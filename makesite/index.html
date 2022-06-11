@@ -377,12 +377,14 @@
           </div>
           <div class="small-2 columns">
             <button class="button secondary postfix"
-              onclick="searchElement(document.getElementById('elementSearch').value)"><i class="fa fa-search"
-                data-dropdown="ElementSearchList"></i></button>
+              onclick="searchElement(document.getElementById('elementSearch').value)"><i
+                class="fa fa-search"></i></button>
           </div>
         </div>
-        <ul id="ElementSearchList" data-dropdown-content class="f-dropdown" aria-hidden="true"
-          style="overflow-y: auto;"></ul>
+        <ul id="ElementSearchList" class="f-dropdown open f-open-dropdown" aria-hidden="false"
+          style="overflow-y: auto;">
+          <li>Hello</li>
+        </ul>
       </div>
     </div>
     <a class="close-reveal-modal">&times;</a>
