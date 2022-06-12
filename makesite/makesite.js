@@ -23,27 +23,29 @@ function generateElementsList(wiz) {
 
 function searchElement(string) {
   document.getElementById("ElementSearchList").innerHTML = "";
-  var Regstr = new RegExp("\\" + string, "i");
-  var shownElems = [];
-  j = 0;
-  var elelist = generateElementsList(0);
-  for (i in elelist) {
-    if (Regstr.test(i) || Regstr.test(elelist[i])) {
-      var e_0 = document.createElement("li");
-      var e_1 = document.createElement("a");
-      e_1.setAttribute("onclick", "elementSelected(this)");
-      e_1.setAttribute("data-eletag", i);
-      e_1.appendChild(document.createTextNode(elelist[i]));
-      var e_2 = document.createElement("small");
-      e_2.appendChild(document.createTextNode(i));
-      e_1.appendChild(e_2);
-      e_0.appendChild(e_1);
-      shownElems[j] = e_0;
-      j++;
+  if (string != "") {
+    var Regstr = new RegExp(string, "i");
+    var shownElems = [];
+    j = 0;
+    var elelist = generateElementsList(0);
+    for (i in elelist) {
+      if (Regstr.test(i) || Regstr.test(elelist[i])) {
+        var e_0 = document.createElement("li");
+        var e_1 = document.createElement("a");
+        e_1.setAttribute("onclick", "elementSelected(this)");
+        e_1.setAttribute("data-eletag", i);
+        e_1.appendChild(document.createTextNode(elelist[i]));
+        var e_2 = document.createElement("small");
+        e_2.appendChild(document.createTextNode(i));
+        e_1.appendChild(e_2);
+        e_0.appendChild(e_1);
+        shownElems[j] = e_0;
+        j++;
+      }
     }
-  }
-  for (i in shownElems) {
-    document.getElementById("ElementSearchList").appendChild(shownElems[i]);
+    for (i in shownElems) {
+      document.getElementById("ElementSearchList").appendChild(shownElems[i]);
+    }
   }
 }
 class ElemObj {
@@ -246,3 +248,14 @@ function constructList(value) {
   }
   return list;
 }
+/*
+function showlist() {
+  $("#ElementSearchList").toArray()[0].style.display = "block";
+  $("#ElementSearchList").toArray()[0].style.position = "fixed";
+  $("#ElementSearchList").toArray()[0].style.left = $("#search-interit").offset().left + "px";
+  $("#ElementSearchList").toArray()[0].style.top = ($("#search-interit").offset().top + $("#elementSearch").innerHeight()) + "px";
+  $("#ElementSearchList").toArray()[0].style.width = $("#search-interit").width();
+}
+function hidelist() {
+  $("#ElementSearchList").toArray()[0].style.display = "none";
+}*/

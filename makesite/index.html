@@ -371,9 +371,11 @@
         </div>
       </div>
       <div class="small-4 columns">
-        <div class="row collapse postfix-round">
+        <div id="search-interit" class="row collapse postfix-round">
           <div class="small-10 columns">
-            <input id="elementSearch" type="text" placeholder="搜索元素名称/标签" class="input-group-field">
+            <input id="elementSearch" type="text" placeholder="搜索元素名称/标签" class="input-group-field"
+              onchange="searchElement(this.value)" data-dropdown="ElementSearchList"
+              onclick="$('#elementSearch').trigger('click')">
           </div>
           <div class="small-2 columns">
             <button class="button secondary postfix"
@@ -381,9 +383,8 @@
                 class="fa fa-search"></i></button>
           </div>
         </div>
-        <ul id="ElementSearchList" class="f-dropdown open f-open-dropdown" aria-hidden="false"
+        <ul id="ElementSearchList" class="f-dropdown" data-dropdown-content aria-hidden="true"
           style="overflow-y: auto;">
-          <li>Hello</li>
         </ul>
       </div>
     </div>

@@ -22,3 +22,75 @@ textarea.code {
 .hidden {
     display: none;
 }
+
+/*
+.dropdownlist {
+    display: none;
+    list-style: none;
+    margin-left: 0;
+    background: #fff;
+    border: solid 1px #ccc;
+    font-size: 0.875rem;
+    height: auto;
+    width: 100%;
+    z-index: 89;
+    margin-top: 2px;
+    font-family: inherit;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    box-sizing: border-box;
+}
+
+.dropdownlist:before {
+    border: inset 6px;
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #fff transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    z-index: 89;
+}
+
+.dropdownlist:after {
+    border: inset 7px;
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #ccc transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: -14px;
+    left: 9px;
+    z-index: 88;
+}
+
+.dropdownlist>* :first-child {
+    margin-top: 0
+}
+
+.dropdownlist>* :last-child {
+    margin-bottom: 0
+}
+
+.dropdownlist li {
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    margin: 0
+}
+
+.dropdownlist li:hover,
+.dropdownlist li:focus {
+    background: #eee
+}
+
+.dropdownlist li a {
+    display: block;
+    padding: 0.5rem;
+    color: #555
+}*/
