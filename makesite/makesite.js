@@ -2,23 +2,20 @@ var Elements = new Object();//定义元素对象容器
 var i = 0;
 var j = 0;
 var k = 0;
+var ElementsObj = JSON.parse("{\"h1\":\"一号标题\",\"h2\":\"二号标题\",\"h3\":\"三号标题\",\"h4\":\"四号标题\",\"h5\":\"五号标题\",\"h6\":\"六号标题\",\"p\":\"段落\",\"br\":\"折行\",\"hr\":\"分割线\",\"abbr\":\"缩写\",\"address\":\"地址\",\"b\":\"粗体文本\",\"blockquote\":\"块引用\",\"cite\":\"引用\",\"code\":\"代码\",\"dfn\":\"定义项目\",\"em\":\"强调文本\",\"i\":\"斜体文本\",\"ins\":\"被插入文本\",\"kbd\":\"键盘链接\",\"mark\":\"有记号的文本\",\"meter\":\"度量衡\",\"pre\":\"预格式文本\",\"progress\":\"进度条\",\"q\":\"短引用\",\"s\":\"删除线文本\",\"samp\":\"计算机代码样本\",\"small\":\"小号文本\",\"strong\":\"更强烈的强调文本\",\"sub\":\"上标文本\",\"sup\":\"下标文本\",\"time\":\"时间\",\"u\":\"下划线文本\",\"var\":\"变量文本\",\"wbr\":\"响应式折行\",\"form\":\"表单\",\"input\":\"输入\",\"textarea\":\"文本域\",\"button\":\"按钮\",\"select\":\"下拉列表\",\"option\":\"选项\",\"optgroup\":\"选项集合\",\"label\":\"标注\",\"fieldset\":\"外框\",\"legend\":\"外框标题\",\"datalist\":\"选项列表\",\"output\":\"输出\",\"iframe\":\"内联框架\",\"img\":\"图像\",\"map\":\"图像映射\",\"area\":\"图像映射点击区域\",\"canvas\":\"画布\",\"figure\":\"figure\",\"figcaption\":\"figcaption\",\"audio\":\"音频\",\"source\":\"媒体资源\",\"track\":\"track\",\"video\":\"视频\",\"a\":\"链接\",\"main\":\"主体\",\"nav\":\"导航链接\",\"ol\":\"有序列表\",\"ul\":\"无序列表\",\"li\":\"列表项\",\"dl\":\"定义列表\",\"dt\":\"定义列表项\",\"dd\":\"描述定义列表项\",\"menu\":\"菜单列表\",\"table\":\"表格\",\"captain\":\"表格标题\",\"th\":\"表头\",\"tr\":\"表格行\",\"td\":\"单元格\",\"tbody\":\"表格主体\",\"tfoot\":\"脚注\",\"col\":\"col\",\"colgroup\":\"colgroup\",\"div\":\"块节\",\"span\":\"内联节\",\"header\":\"头部\",\"footer\":\"底部\",\"section\":\"区域\",\"article\":\"文章内容\",\"aside\":\"旁白\",\"details\":\"补充细节\",\"dialog\":\"对话框\",\"summary\":\"summary\",\"script\":\"客户端脚本\",\"noscript\":\"noscript\",\"embed\":\"容器\",\"object\":\"嵌入对象\",\"param\":\"嵌入对象参数\"}");
 
 function elementSelected(litem_a) {
-  document.getElementById('ElementDropdown').innerHTML = generateElementsList(0)[litem_a.dataset.eletag];
+  document.getElementById('ElementDropdown').innerHTML = ElementsObj[litem_a.dataset.eletag];
   document.getElementById('elementTag').value = litem_a.dataset.eletag;
 }
 
-function generateElementsList(wiz) {
-  var TagToData = {};
-  var DataToTag = {};
-  var ELEOBJS = $("ul#ElementList li a").toArray();
-  for (i in ELEOBJS) {
-    TagToData[ELEOBJS[i].dataset.eletag] = ELEOBJS[i].innerHTML;
-  }
-  for (i in ELEOBJS) {
-    DataToTag[ELEOBJS[i].innerHTML] = ELEOBJS[i].dataset.eletag;
-  }
-  return [TagToData, DataToTag][wiz];
+function appendList() {
+  var eleul = document.getElementById("ElementList");
+  var e_0 = document.createElement("li");
+  var e_1 = document.createElement("h4");
+  e_1.appendChild(document.createTextNode("基础"));
+  e_0.appendChild(e_1);
+
 }
 
 function searchElement(string) {
@@ -27,14 +24,14 @@ function searchElement(string) {
     var Regstr = new RegExp(string, "i");
     var shownElems = [];
     j = 0;
-    var elelist = generateElementsList(0);
-    for (i in elelist) {
-      if (Regstr.test(i) || Regstr.test(elelist[i])) {
+    var ElementsObj = ElementsObj;
+    for (i in ElementsObj) {
+      if (Regstr.test(i) || Regstr.test(ElementsObj[i])) {
         var e_0 = document.createElement("li");
         var e_1 = document.createElement("a");
         e_1.setAttribute("onclick", "elementSelected(this)");
         e_1.setAttribute("data-eletag", i);
-        e_1.appendChild(document.createTextNode(elelist[i]));
+        e_1.appendChild(document.createTextNode(ElementsObj[i]));
         var e_2 = document.createElement("small");
         e_2.appendChild(document.createTextNode(i));
         e_1.appendChild(e_2);

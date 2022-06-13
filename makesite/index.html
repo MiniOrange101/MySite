@@ -102,88 +102,6 @@
     </div>
   </div>
   <!--结束编辑区-->
-  <!--P模态框-->
-  <div id="askforpinfo" class="reveal-modal" data-reveal>
-    <h2>设置文本框</h2>
-    <div class="row">
-      <form data-abide>
-        <div class="small-6 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">ID: </span>
-            </div>
-            <div class="small-9 columns">
-              <input id="pid" type="text" placeholder="输入文本框ID" class="input-group-field" required>
-            </div>
-            <small id="piderr" class="error" style="display: none;">请输入ID</small>
-          </div>
-
-        </div>
-        <div class="small-6 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">内容: </span>
-            </div>
-            <div class="small-9 columns">
-              <input id="pcontent" type="text" placeholder="输入文本" class="input-group-field">
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div>
-      <h3>文本类型</h3>
-
-    </div>
-    <div>
-      <h3>文本样式</h3>
-      <div class="row">
-        <div class="small-12 columns">
-          <ul id="pcsstabs" class="tabs" data-tab>
-            <li class="tab-title active"><a href="#pcustomize" aria-selected="true" tabindex="0">自定义样式</a></li>
-            <li class="tab-title"><a href="#pcssdiv" aria-selected="false" tabindex="-1">CSS代码</a></li>
-            <li class="tab-title"><a href="#pnone" aria-selected="false" tabindex="-1">不使用样式</a></li>
-          </ul>
-        </div>
-        <div class="tabs-content">
-          <div class="content active" id="pcustomize">
-            <h1>开发中...请勿选择此项</h1>
-          </div>
-          <div id="pcssdiv" class="content">
-            <textarea id="pcss" cols="30" rows="15" class="code"></textarea>
-            <button type="button" class="button radius expand"
-              onclick="addElement(document.getElementById('pid').value,'p',[1,document.getElementById('pcontent').value,document.getElementById('pcss').value])">完成</button>
-          </div>
-          <div id="pnone" class="content"><button type="button" class="button radius expand"
-              onclick="addElement(document.getElementById('pid').value,'p',[2,document.getElementById('pcontent').value])">完成</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
-  <div id="askforimginfo" class="reveal-modal" data-reveal>
-    <h1>设置图片</h1>
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('imgid').value,'img',document.getElementById('imgcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
-  <div id="askforscriptinfo" class="reveal-modal" data-reveal>
-    <h1>设置JS代码</h1>
-    <label>
-      ID: <input type="text" id="scriptid">
-      <small id="scriptiderr" class="error" style="display: none;">请输入ID</small>
-    </label>
-    代码: <textarea id="scriptcontent" cols="30" rows="10" class="code"></textarea>
-    <button type="button" class="button radius"
-      onclick="addElement(document.getElementById('Pid').value,'script',document.getElementById('scriptcontent').value)">完成
-    </button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-
   <div id="askForElementInfo" class="reveal-modal" data-reveal>
     <h2>设置元素</h2>
     <h3>元素类型</h3>
@@ -195,168 +113,49 @@
           <ul id="ElementList" data-dropdown-content class="f-dropdown" aria-hidden="true" style="overflow-y: auto;">
             <li>
               <h4>基础</h4>
+              <!--9-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="h1">一号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="h2">二号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="h3">三号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="h4">四号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="h5">五号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="h6">六号标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="p">段落</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="br">折行</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="hr">分割线</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-0">
               <h4>格式</h4>
+              <!--26-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="abbr">缩写</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="address">地址</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="b">粗体文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="bdi">bdi</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="bdo">bdo</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="blockquote">块引用</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="cite">引用</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="code">代码</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="dfn">定义项目</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="em">强调文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="i">斜体文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="ins">被插入文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="kbd">键盘链接</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="mark">有记号的文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="meter">度量衡</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="pre">预格式文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="progress">进度条</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="q">短引用</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="ruby">ruby注释</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="rt">字符注释</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="s">删除线文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="samp">计算机代码样本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="small">小号文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="strong">更强烈的强调文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="sub">上标文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="sup">下标文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="time">时间</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="u">下划线文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="var">变量文本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="wbr">响应式折行</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-1">
               <h4>表单</h4>
+              <!--12-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="form">表单</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="input">输入</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="textarea">文本域</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="button">按钮</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="select">下拉列表</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="option">选项</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="optgroup">选项集合</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="label">标注</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="fieldset">外框</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="legend">外框标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="datalist">选项列表</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="keygen">keygen</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="output">输出</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-2">
               <h4>框架</h4>
+              <!--1-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="iframe">内联框架</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-3">
               <h4>图像</h4>
+              <!--6-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="img">图像</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="map">图像映射</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="area">图像映射点击区域</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="canvas">画布</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="figure">figure</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="figcaption">figcaption</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-4">
               <h4>音视频媒体</h4>
+              <!--4-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="audio">音频</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="source">媒体资源</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="track">track</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="video">视频</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-5">
               <h4>链接</h4>
+              <!--3-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="a">链接</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="main">主体</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="nav">导航链接</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-6">
               <h4>列表</h4>
+              <!--7-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="ol">有序列表</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="ul">无序列表</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="li">列表项</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="dl">定义列表</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="dt">定义列表项</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="dd">描述定义列表项</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="menu">菜单列表</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-7">
               <h4>表格</h4>
+              <!--9-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="table">表格</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="captain">表格标题</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="th">表头</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="tr">表格行</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="td">单元格</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="tbody">表格主体</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="tfoot">脚注</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="col">col</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="colgroup">colgroup</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-8">
               <h4>节</h4>
+              <!--10-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="div">块节</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="span">内联节</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="header">头部</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="footer">底部</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="section">区域</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="article">文章内容</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="aside">旁白</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="details">补充细节</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="dialog">对话框</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="summary">summary</a></li>
-            <li>
-              <hr>
-            </li>
-            <li>
+            <li id="ul-9">
               <h4>程序</h4>
+              <!--5-->
             </li>
-            <li><a onclick="elementSelected(this)" data-eletag="script">客户端脚本</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="noscript">noscript</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="embed">容器</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="object">嵌入对象</a></li>
-            <li><a onclick="elementSelected(this)" data-eletag="param">嵌入对象参数</a></li>
-            <li>
-              <hr>
-            </li>
-            <li><a onclick="elementSelected(this)" data-eletag="other">其他</a></li>
+            <li id="ul-10"><a onclick="elementSelected(this)">其他</a></li>
           </ul>
         </div>
       </div>
@@ -374,8 +173,7 @@
         <div id="search-interit" class="row collapse postfix-round">
           <div class="small-10 columns">
             <input id="elementSearch" type="text" placeholder="搜索元素名称/标签" class="input-group-field"
-              onchange="searchElement(this.value)" data-dropdown="ElementSearchList"
-              onclick="$('#elementSearch').trigger('click')">
+              onchange="searchElement(this.value)" data-dropdown="ElementSearchList">
           </div>
           <div class="small-2 columns">
             <button class="button secondary postfix"
