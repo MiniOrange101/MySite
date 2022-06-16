@@ -4,222 +4,31 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>在线建站</title>
+  <title>在线建站-基础版</title>
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <script src='../script.js'></script>
-  <link rel="stylesheet" href="../styles.css">
-  <script src="makesite.js"></script>
+  <script src='main.js'></script>
+  <link rel="stylesheet" href="main.css">
+  <base href="#">
 </head>
 
-<body style="height: 100%;">
-  <div style="display: flex;flex-flow: column;height: 100%;">
-    <!--标题栏-->
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="../index.html"><i class="fi-web"></i> Lazyco.top</a>
-          </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="javascript:void(0);"><span>Menu</span></a></li>
+<body>
+  <div class="container-fluid">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <span class="fs-4">Lazyco.top</span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="../index.html" class="nav-link" aria-current="page">主页</a></li>
+        <li class="nav-item"><a href="../contact.html" class="nav-link">联系</a></li>
+        <li class="nav-item"><a href="../downloads/index.html" class="nav-link">下载</a></li>
+        <li class="nav-item"><a href="./index.html" class="nav-link active">在线建站</a></li>
+        <li class="nav-item"><a href="../check/index.html" class="nav-link">在线作业工具</a></li>
       </ul>
-      <!--导航栏按钮-->
-      <section class="top-bar-section">
-        <ul class="left">
-          <li><a href="../index.html"><i class="fi-home"></i> 主页</a></li>
-          <li><a href="../contact.html"><i class="fi-mail"></i> 联系</a></li>
-          <li><a href="../downloads/index.html"><i class="fi-download"></i> 下载</a></li>
-          <li class="active"><a href="./index.html"><i class="fi-page"></i> 在线建站</a></li>
-          <li><a href="../check/index.html"><i class="fi-book"></i> 在线作业工具</a></li>
-        </ul>
-      </section>
-    </nav>
-
-    <!--编辑区-->
-    <div class="row" style="overflow-y: hidden;flex: 1 1 auto;">
-      <!--元素列表-->
-      <div id="elements" class="small-2 columns"
-        style="border-width: 1px;border-style: solid;height: 100%;background-color: #f1f1f1;overflow-y: auto;flex: 1 1 auto;">
-        <ul id="ElementsList" class="side-nav">
-          <li>
-            <h3>元素列表</h3>
-          </li>
-          <li>
-            <a data-reveal-id="askForElementInfo" onclick="loadRevalModal()"><i class="fa fa-plus-circle"></i> 添加元素</a>
-          </li>
-        </ul>
-      </div>
-      <!--预览-->
-      <div id="container" class="small-8 columns" style="border-width: 1px;border-style: solid;height: 100%;"></div>
-      <!--设置-->
-      <div id="settings" class="small-2 columns"
-        style="border-width: 1px;border-style: solid;height: 100%;background-color: #f1f1f1;overflow-y: auto;flex: 1 1 auto;">
-        <ul class="side-nav">
-          <li>
-            <h3>属性列表</h3>
-          </li>
-          <li><a href="#"><i class="fa fa-plus-circle"></i> 自定义属性</a></li>
-        </ul>
-      </div>
-    </div>
+    </header>
   </div>
-  <div id="askForElementInfo" class="reveal-modal" data-reveal>
-    <h2>设置元素</h2>
-    <!--TYPE-->
-    <div class="panel">
-      <h3>元素类型</h3>
-      <div class="row">
-        <div class="small-4 columns">
-          <div class="row collapse prefix-radius">
-            <button id="ElementDropdown" data-dropdown="ElementList"
-              class="button secondary dropdown expand prefix">选择元素类型</button>
-            <ul id="ElementList" data-dropdown-content class="f-dropdown" aria-hidden="true" style="overflow-y: auto;">
-              <li>
-                <h4>基础</h4>
-              </li>
-              <li id="ul-0">
-                <h4>格式</h4>
-              </li>
-              <li id="ul-1">
-                <h4>表单</h4>
-              </li>
-              <li id="ul-2">
-                <h4>框架</h4>
-              </li>
-              <li id="ul-3">
-                <h4>图像</h4>
-              </li>
-              <li id="ul-4">
-                <h4>音视频媒体</h4>
-              </li>
-              <li id="ul-5">
-                <h4>链接</h4>
-              </li>
-              <li id="ul-6">
-                <h4>列表</h4>
-              </li>
-              <li id="ul-7">
-                <h4>表格</h4>
-              </li>
-              <li id="ul-8">
-                <h4>节</h4>
-              </li>
-              <li id="ul-9">
-                <h4>程序</h4>
-              </li>
-              <li id="ul-10">
-                <h5 onclick="elementSelected(this)">其他</h5>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="small-4 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">标签: </span>
-            </div>
-            <div class="small-9 columns">
-              <input id="elementTag" type="text" placeholder="输入元素标签" class="input-group-field">
-            </div>
-          </div>
-        </div>
-        <div class="small-4 columns">
-          <div id="search-interit" class="row collapse postfix-round">
-            <div class="small-10 columns">
-              <input id="elementSearch" type="text" placeholder="搜索元素名称/标签" class="input-group-field"
-                onchange="searchElement(this.value)" data-dropdown="ElementSearchList">
-            </div>
-            <div class="small-2 columns">
-              <button class="button secondary postfix"
-                onclick="searchElement(document.getElementById('elementSearch').value)"><i
-                  class="fa fa-search"></i></button>
-            </div>
-          </div>
-          <ul id="ElementSearchList" class="f-dropdown" data-dropdown-content aria-hidden="true"
-            style="overflow-y: auto;">
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!--Attribute-->
-    <div class="panel">
-      <h3>元素属性</h3>
-      <div class="row">
-        <h5>属性列表</h5>
-        <div id="attributes" class="panel radius">
-        </div>
-        <ul class="button-group round even-2">
-          <li>
-            <button class="button success" onclick="askAddn(true)">
-              <i class="fa fa-plus-circle"></i> 添加属性
-            </button>
-          </li>
-          <li><button class="button alert" onclick="askClearn(true)"><i class="fa fa-trash"></i> 清除属性</button></li>
-        </ul>
-      </div>
-    </div>
-
-    <!--Style-->
-    <div class="panel">
-      <h3>元素样式</h3>
-      <div class="row">
-        <ul class="tabs" data-tab>
-          <li class="tab-title active"><a href="#configCSS">设置样式</a></li>
-          <li class="tab-title"><a href="#inputCSS">自定义CSS样式</a></li>
-          <li class="tab-title"><a href="#noCSS">不使用样式</a></li>
-        </ul>
-      </div>
-      <div class="tabs-content">
-        <div class="content row active" id="configCSS">
-          <h5>样式列表</h5>
-          <div id="styles" class="panel radius"></div>
-          <ul class="button-group round even-2">
-            <li><button class="button success" onclick="askAddn(false)"><i class="fa fa-plus-circle"></i>
-                添加样式</button>
-            </li>
-            <li><button class="button alert" onclick="askClearn(false)"><i class="fa fa-trash"></i>清除样式</button></li>
-          </ul>
-        </div>
-        <div class="content row" id="inputCSS">
-          <textarea id="stylesSheetCSS" placeholder="CSS代码" rows="16" class="code"></textarea>
-        </div>
-        <div class="content row" id="noCSS"></div>
-      </div>
-    </div>
-
-    <!--Other-->
-    <div class="panel">
-      <h3>其他</h3>
-      <div class="row">
-        <div class="small-6 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">ID: </span>
-            </div>
-            <div class="small-9 columns">
-              <input id="ElementID" type="text" placeholder="输入元素ID" class="input-group-field">
-            </div>
-          </div>
-        </div>
-        <div class="small-6 columns">
-          <div class="row collapse prefix-radius">
-            <div class="small-3 columns">
-              <span class="prefix">父元素ID: </span>
-            </div>
-            <div class="small-9 columns">
-              <input id="ParentID" type="text" placeholder="输入父元素ID" class="input-group-field">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="button expand round">添加元素</button>
-    <a class="close-reveal-modal">&times;</a>
-  </div>
-  <!--初始化JS-->
-  <script>$(document).ready(function () { $(document).foundation() })</script>
-
 </body>
 
 </html>

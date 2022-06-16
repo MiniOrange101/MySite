@@ -204,52 +204,6 @@ function addElement(id, tag, value) {
 }
 
 function makelLi(tag, id) {
-  var shownText;
-  var isform = 0;
-  switch (tag) {
-    case "p":
-      shownText = "文本";
-      break;
-    case "img":
-      shownText = "图片";
-      break;
-    case "table":
-      shownText = "表格";
-      break;
-    case "ol":
-      shownText = "有序列表";
-      break;
-    case "ul":
-      shownText = "无序列表";
-      break;
-    case "form":
-      shownText = "表单";
-      break;
-    case "form input.text":
-      shownText = "文本输入框";
-      break;
-    case "form input.password":
-      shownText = "密码输入框";
-      break;
-    case "form input.submit":
-      shownText = "提交按钮";
-      break;
-    case "form input.other":
-      shownText = "获取输入框";
-      break;
-    case "form other":
-      shownText = "表单获取框";
-      break;
-    case "iframe":
-      shownText = "框架";
-      break;
-    case "script":
-      shownText = "JS脚本";
-      break;
-    default:
-      shownText = "其他元素";
-      break;
-  }
   var e_0 = document.createElement("li");
   var e_1 = document.createElement("a");
   e_1.setAttribute("href", "javascript:ElementSelected(" + id + ");");
@@ -294,44 +248,48 @@ function askClearn(p) {
 function askAddn(p) {
   var askvalue = p ? "属性" : "样式";
   var AttrName = prompt(askvalue + "名: ");
-  var AttrValue = prompt(askvalue + "值: ");
-  var e_0 = document.createElement("div");
-  e_0.setAttribute("data-alert", "");
-  e_0.setAttribute("class", "alert-box info radius");
-  var e_1 = document.createElement("strong");
-  e_1.appendChild(document.createTextNode(askvalue + ":"));
-  e_0.appendChild(e_1);
-  e_0.appendChild(document.createTextNode(askvalue + "名:"));
-  var e_2 = document.createElement("a");
-  e_2.setAttribute("style", "color: black;");
-  e_2.setAttribute("onclick", "changeValue(this)");
-  var e_3 = document.createElement("em");
-  e_3.appendChild(document.createTextNode(AttrName));
-  e_2.appendChild(e_3);
-  var e_4 = document.createElement("i");
-  e_4.setAttribute("class", "fi-pencil");
-  e_2.appendChild(e_4);
-  e_0.appendChild(e_2);
-  e_0.appendChild(document.createTextNode(";" + askvalue + "值:"));
-  var e_5 = document.createElement("a");
-  e_5.setAttribute("style", "color: black;");
-  e_5.setAttribute("onclick", "changeValue(this)");
-  var e_6 = document.createElement("em");
-  e_6.appendChild(document.createTextNode(AttrValue));
-  e_5.appendChild(e_6);
-  var e_7 = document.createElement("i");
-  e_7.setAttribute("class", "fi-pencil");
-  e_5.appendChild(e_7);
-  e_0.appendChild(e_5);
-  var e_8 = document.createElement("a");
-  e_8.setAttribute("class", "close");
-  var e_9 = document.createElement("i");
-  e_9.setAttribute("class", "fa fa-trash");
-  e_8.appendChild(e_9);
-  e_0.appendChild(e_8);
-  e_0.setAttribute("data-" + (p ? "attr" : "style") + "name", AttrName);
-  e_0.setAttribute("data-" + (p ? "attr" : "style") + "value", AttrValue);
-  document.getElementById(p ? "attributes" : "styles").appendChild(e_0);
+  if (AttrName) {
+    var AttrValue = prompt(askvalue + "值: ");
+    if (AttrValue) {
+      var e_0 = document.createElement("div");
+      e_0.setAttribute("data-alert", "");
+      e_0.setAttribute("class", "alert-box info radius");
+      var e_1 = document.createElement("strong");
+      e_1.appendChild(document.createTextNode(askvalue + ":"));
+      e_0.appendChild(e_1);
+      e_0.appendChild(document.createTextNode(askvalue + "名:"));
+      var e_2 = document.createElement("a");
+      e_2.setAttribute("style", "color: black;");
+      e_2.setAttribute("onclick", "changeValue(this)");
+      var e_3 = document.createElement("em");
+      e_3.appendChild(document.createTextNode(AttrName));
+      e_2.appendChild(e_3);
+      var e_4 = document.createElement("i");
+      e_4.setAttribute("class", "fi-pencil");
+      e_2.appendChild(e_4);
+      e_0.appendChild(e_2);
+      e_0.appendChild(document.createTextNode(";" + askvalue + "值:"));
+      var e_5 = document.createElement("a");
+      e_5.setAttribute("style", "color: black;");
+      e_5.setAttribute("onclick", "changeValue(this)");
+      var e_6 = document.createElement("em");
+      e_6.appendChild(document.createTextNode(AttrValue));
+      e_5.appendChild(e_6);
+      var e_7 = document.createElement("i");
+      e_7.setAttribute("class", "fi-pencil");
+      e_5.appendChild(e_7);
+      e_0.appendChild(e_5);
+      var e_8 = document.createElement("a");
+      e_8.setAttribute("class", "close");
+      var e_9 = document.createElement("i");
+      e_9.setAttribute("class", "fa fa-trash");
+      e_8.appendChild(e_9);
+      e_0.appendChild(e_8);
+      e_0.setAttribute("data-" + (p ? "attr" : "style") + "name", AttrName);
+      e_0.setAttribute("data-" + (p ? "attr" : "style") + "value", AttrValue);
+      document.getElementById(p ? "attributes" : "styles").appendChild(e_0);
+    }
+  }
 }
 
 function changeValue(Element) {
