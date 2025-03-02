@@ -23,4 +23,11 @@
             "MiniOrange101"
         ]
     }
+    "home": {
+        "title": "makesite",
+        "introduction": "制作网页",
+        "authors": [
+            "MiniOrange101"
+        ]
+    }
 }
